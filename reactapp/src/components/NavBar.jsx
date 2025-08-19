@@ -2,10 +2,15 @@ import React from "react";
 
 function NavBar()
 {
+    return(
     <div>
-        <h1>Neo Cricket Tournament Registration</h1>
-        
+        <a>Neo Cricket Tournament Registration</a>
+        <ul>
+            <li>Playes</li>
+            <li>Home</li>
+        </ul>
     </div>
+    )
 }
 
 export default NavBar;
