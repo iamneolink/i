@@ -1,11 +1,16 @@
 import React from "react";
-// import PlayerForm from "./PlayerForm";
 import AddPlayer from "./AddPlayer";
+import cricketImg from "../assets/background.jpg";
+
 function Home() {
   return (
-    <div>
-      <h2>Welcome to Neo Cricket Tournament Registration</h2>
-      <p>Register a new player quickly below:</p>
+    <div className="home-div">
+      <h2>Welcome to Cricket Tournament Registration</h2>
+      <img
+        src={cricketImg}
+        alt="Cricket"
+        style={{ maxWidth: "100%", marginBottom: "1rem" }}
+      />
       <AddPlayer />
     </div>
   );

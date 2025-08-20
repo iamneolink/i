@@ -6,7 +6,10 @@ function ViewPlayer() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8080/getAllPlayer")
+    fetch("/getAllPlayer", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch players");
         return res.json();
@@ -26,16 +29,16 @@ function ViewPlayer() {
 
   return (
     <div>
-      <h2>Registered Players</h2>
+      <h2>All Players</h2>
       <table className="player-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>City</th>
+            <th>Player Name</th>
+            <th>Player City</th>
             <th>Phone</th>
-            <th>Played-in</th>
-            <th>Type</th>
-            <th>Last Team</th>
+            <th>Played In</th>
+            <th>Player Type</th>
+            <th>Last Played For</th>
           </tr>
         </thead>
         <tbody>
@@ -48,12 +51,12 @@ function ViewPlayer() {
           ) : (
             players.map((p, i) => (
               <tr key={i}>
-                <td>{p.name}</td>
-                <td>{p.city}</td>
+                <td>{p.playerName}</td>
+                <td>{p.playerCity}</td>
                 <td>{p.phone}</td>
                 <td>{p.playedIn}</td>
-                <td>{p.type}</td>
-                <td>{p.lastTeam}</td>
+                <td>{p.playerType}</td>
+                <td>{p.lastPlayedFor}</td>
               </tr>
             ))
           )}

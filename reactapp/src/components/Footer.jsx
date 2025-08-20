@@ -13,8 +13,7 @@ function Footer() {
         borderTop: "1px solid #e5e7eb",
       }}
     >
-      Neo Cricket Tournament Registration System &copy;{" "}
-      {new Date().getFullYear()}
+      Cricket Tournament Registration App
     </footer>
   );
 }

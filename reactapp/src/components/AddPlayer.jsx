@@ -1,44 +1,40 @@
+// ...existing code...
+
 import React, { useState } from "react";
 
-/**
- * AddPlayer component
- * Renders a player registration form with validation.
- * On successful submission, sends data to the backend API (/addPlayer).
- */
 const initialState = {
-  name: "",
-  city: "",
+  playerName: "",
+  playerCity: "",
   phone: "",
   playedIn: "",
-  type: "",
-  lastTeam: "",
+  playerType: "",
+  lastPlayedFor: "",
 };
 
-function AddPlayer({ onSuccess }) {
+function AddPlayer() {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState("");
 
-  // Validate form fields
   const validate = () => {
     const errs = {};
-    if (!form.name.trim()) errs.name = "Name is required";
-    if (!form.city.trim()) errs.city = "City is required";
-    if (!/^\d{10}$/.test(form.phone))
-      errs.phone = "Valid 10-digit phone required";
-    if (!form.playedIn.trim()) errs.playedIn = "Played-in is required";
-    if (!form.type) errs.type = "Type is required";
+    if (!form.playerName.trim()) errs.playerName = "Name is required";
+    if (!form.playerCity.trim()) errs.playerCity = "Player City is required";
+    if (!form.phone.trim()) errs.phone = "Phone is required";
+    else if (!/^\d{10}$/.test(form.phone))
+      errs.phone = "Phone must be 10 digits";
+    if (!form.playedIn) errs.playedIn = "Played In is required";
+    if (!form.playerType) errs.playerType = "Player Type is required";
+    if (!form.lastPlayedFor) errs.lastPlayedFor = "Last Played For is required";
     return errs;
   };
 
-  // Handle input changes
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
     setMessage("");
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
@@ -47,76 +43,102 @@ function AddPlayer({ onSuccess }) {
       return;
     }
     try {
-      const res = await fetch("http://localhost:8080/addPlayer", {
+      await fetch("/addPlayer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("Failed to register player");
       setMessage("Player registered successfully!");
       setForm(initialState);
-      if (onSuccess) onSuccess();
     } catch {
       setMessage("Error registering player. Please try again.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="player-form" noValidate>
-      <h2>Register New Player</h2>
+    <form onSubmit={handleSubmit} aria-label="add-player-form">
+      <h2>Register a New Player</h2>
       <div>
+        <label htmlFor="playerName">Player Name:</label>
         <input
-          name="name"
-          placeholder="Name"
-          value={form.name}
+          id="playerName"
+          name="playerName"
+          value={form.playerName}
           onChange={handleChange}
         />
-        {errors.name && <span className="error">{errors.name}</span>}
+        {errors.playerName && (
+          <span className="error">{errors.playerName}</span>
+        )}
       </div>
       <div>
+        <label htmlFor="playerCity">Player City:</label>
         <input
-          name="city"
-          placeholder="City"
-          value={form.city}
+          id="playerCity"
+          name="playerCity"
+          value={form.playerCity}
           onChange={handleChange}
         />
-        {errors.city && <span className="error">{errors.city}</span>}
+        {errors.playerCity && (
+          <span className="error">{errors.playerCity}</span>
+        )}
       </div>
       <div>
+        <label htmlFor="phone">Phone:</label>
         <input
+          id="phone"
           name="phone"
-          placeholder="Phone"
           value={form.phone}
           onChange={handleChange}
         />
         {errors.phone && <span className="error">{errors.phone}</span>}
       </div>
       <div>
-        <input
+        <label htmlFor="playedIn">Played In:</label>
+        <select
+          id="playedIn"
           name="playedIn"
-          placeholder="Played-in (e.g. School, Club)"
           value={form.playedIn}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select</option>
+          <option value="Domestic">Domestic</option>
+          <option value="International">International</option>
+        </select>
         {errors.playedIn && <span className="error">{errors.playedIn}</span>}
       </div>
       <div>
-        <select name="type" value={form.type} onChange={handleChange}>
-          <option value="">Select Type</option>
+        <label htmlFor="playerType">Player Type:</label>
+        <select
+          id="playerType"
+          name="playerType"
+          value={form.playerType}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
           <option value="Batsman">Batsman</option>
           <option value="Bowler">Bowler</option>
           <option value="All-rounder">All-rounder</option>
-          <option value="Wicketkeeper">Wicketkeeper</option>
         </select>
-        {errors.type && <span className="error">{errors.type}</span>}
+        {errors.playerType && (
+          <span className="error">{errors.playerType}</span>
+        )}
       </div>
       <div>
-        <input
-          name="lastTeam"
-          placeholder="Last Team"
-          value={form.lastTeam}
+        <label htmlFor="lastPlayedFor">Last Played For:</label>
+        <select
+          id="lastPlayedFor"
+          name="lastPlayedFor"
+          value={form.lastPlayedFor}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select</option>
+          <option value="Team A">Team A</option>
+          <option value="Team B">Team B</option>
+          <option value="Team C">Team C</option>
+        </select>
+        {errors.lastPlayedFor && (
+          <span className="error">{errors.lastPlayedFor}</span>
+        )}
       </div>
       <button type="submit">Register Player</button>
       {message && <div className="form-message">{message}</div>}
