@@ -24,7 +24,12 @@ function ViewPlayer() {
       });
   }, []);
 
-  if (loading) return <div>Loading players...</div>;
+  if (loading)
+    return (
+      <div>
+        <p>All Players</p>Loading players...
+      </div>
+    );
   if (error) return <div className="error">{error}</div>;
 
   return (
