@@ -1,5 +1,3 @@
-import React from "react";
-import AddPlayer from "./AddPlayer";
 import cricketImg from "../assets/background.jpg";
 
 function Home() {
@@ -11,7 +9,7 @@ function Home() {
         alt="Cricket"
         style={{ maxWidth: "100%", marginBottom: "1rem" }}
       />
-      <AddPlayer />
+      lkjfdanfk
     </div>
   );
 }
