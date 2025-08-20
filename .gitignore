@@ -1,3 +1,23 @@
-node_modules
+
+# Node
+node_modules/
+
+# React build
+reactapp/build/
+
+# Java/Maven
+springapp/target/
+springapp/.classpath
+springapp/.project
+springapp/.settings/
+springapp/.idea/
+springapp/*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test/Temp files
 reacttest.js
 junit.java
+
