@@ -1,8 +1,8 @@
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/configuration/hi.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/configuration/CorsConfiguration.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/service/PlayerService.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/model/Player.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/repository/PlayerRepo.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/PlayerController.java
-/home/rangandale/projects/neoCric/neocricfe/test/springapp/src/main/java/com/examly/springapp/controller/ApiController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/hi.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/PlayerRepo.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PlayerService.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/ApiController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/PlayerController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/CorsConfiguration.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Player.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
