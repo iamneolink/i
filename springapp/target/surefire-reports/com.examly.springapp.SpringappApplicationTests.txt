@@ -1,4 +1,106 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.118 s - in com.examly.springapp.SpringappApplicationTests
+Tests run: 23, Failures: 22, Errors: 0, Skipped: 0, Time elapsed: 6.285 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+com.examly.springapp.SpringappApplicationTests.test_CorsConfiguration_Has_Configuration_Annotation  Time elapsed: 0.59 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.configuration.CorsConfiguration or annotation org.springframework.context.annotation.Configuration does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassHasAnnotation(SpringappApplicationTests.java:215)
+	at com.examly.springapp.SpringappApplicationTests.test_CorsConfiguration_Has_Configuration_Annotation(SpringappApplicationTests.java:177)
+
+com.examly.springapp.SpringappApplicationTests.test_Repository_Folder_Exists  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_Repository_Folder_Exists(SpringappApplicationTests.java:88)
+
+com.examly.springapp.SpringappApplicationTests.test_PlayerModel_Class_Exists  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassExists(SpringappApplicationTests.java:185)
+	at com.examly.springapp.SpringappApplicationTests.test_PlayerModel_Class_Exists(SpringappApplicationTests.java:124)
+
+com.examly.springapp.SpringappApplicationTests.test_Service_Folder_Exists  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_Service_Folder_Exists(SpringappApplicationTests.java:96)
+
+com.examly.springapp.SpringappApplicationTests.testaddPlayer  Time elapsed: 0.385 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at com.examly.springapp.SpringappApplicationTests.testaddPlayer(SpringappApplicationTests.java:39)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_File_Exists  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_Player_File_Exists(SpringappApplicationTests.java:81)
+
+com.examly.springapp.SpringappApplicationTests.test_ApiController_Class_Exists  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.controller.ApiController does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassExists(SpringappApplicationTests.java:185)
+	at com.examly.springapp.SpringappApplicationTests.test_ApiController_Class_Exists(SpringappApplicationTests.java:109)
+
+com.examly.springapp.SpringappApplicationTests.test_PlayerService_Class_Exists  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.service.PlayerService does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassExists(SpringappApplicationTests.java:185)
+	at com.examly.springapp.SpringappApplicationTests.test_PlayerService_Class_Exists(SpringappApplicationTests.java:119)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerType_Field  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field playerType in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerType_Field(SpringappApplicationTests.java:156)
+
+com.examly.springapp.SpringappApplicationTests.test_configuration_Folder_Exists  Time elapsed: 0.06 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_configuration_Folder_Exists(SpringappApplicationTests.java:104)
+
+com.examly.springapp.SpringappApplicationTests.test_CorsConfiguration_Class_Exists  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.configuration.CorsConfiguration does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassExists(SpringappApplicationTests.java:185)
+	at com.examly.springapp.SpringappApplicationTests.test_CorsConfiguration_Class_Exists(SpringappApplicationTests.java:172)
+
+com.examly.springapp.SpringappApplicationTests.test_model_Directory_Exists  Time elapsed: 0.052 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_model_Directory_Exists(SpringappApplicationTests.java:74)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerName_Field  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field playerName in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerName_Field(SpringappApplicationTests.java:135)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playedIn_Field  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field playedIn in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playedIn_Field(SpringappApplicationTests.java:151)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_lastPlayedFor_Field  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field lastPlayedFor in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_lastPlayedFor_Field(SpringappApplicationTests.java:161)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerId_Field  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field playerId in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerId_Field(SpringappApplicationTests.java:130)
+
+com.examly.springapp.SpringappApplicationTests.test_Controller_Directory_Exists  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_Controller_Directory_Exists(SpringappApplicationTests.java:60)
+
+com.examly.springapp.SpringappApplicationTests.test_PlayerRepo_Class_Exists  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.repository.PlayerRepo does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassExists(SpringappApplicationTests.java:185)
+	at com.examly.springapp.SpringappApplicationTests.test_PlayerRepo_Class_Exists(SpringappApplicationTests.java:114)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerCity_Field  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field playerCity in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_playerCity_Field(SpringappApplicationTests.java:140)
+
+com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_phone_Field  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Field phone in class com.examly.springapp.model.Player does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkFieldExists(SpringappApplicationTests.java:194)
+	at com.examly.springapp.SpringappApplicationTests.test_Player_Model_Has_phone_Field(SpringappApplicationTests.java:145)
+
+com.examly.springapp.SpringappApplicationTests.test_ApiController_File_Exists  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.examly.springapp.SpringappApplicationTests.test_ApiController_File_Exists(SpringappApplicationTests.java:67)
+
+com.examly.springapp.SpringappApplicationTests.test_PlayerRepo_Extends_JpaRepository  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Class com.examly.springapp.repository.PlayerRepo or interface org.springframework.data.jpa.repository.JpaRepository does not exist.
+	at com.examly.springapp.SpringappApplicationTests.checkClassImplementsInterface(SpringappApplicationTests.java:204)
+	at com.examly.springapp.SpringappApplicationTests.test_PlayerRepo_Extends_JpaRepository(SpringappApplicationTests.java:167)
+
