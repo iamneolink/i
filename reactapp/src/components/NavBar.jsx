@@ -27,7 +27,7 @@ function Navbar() {
           <li>
             <NavLink
               to="/add"
-              data-testid="navbar-register-link"
+              aria-label="navbar-register-player"
               className={({ isActive }) =>
                 "navbar-register " + (isActive ? "active" : "")
               }

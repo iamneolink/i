@@ -14,11 +14,7 @@ function Home() {
         alt="Players in a Cricket Tournament"
         className="home-image"
       />
-      <button
-        data-testid="register-btn"
-        className="register-btn"
-        onClick={() => navigate("/add")}
-      >
+      <button className="register-btn" onClick={() => navigate("/add")}>
         Register Player
       </button>
     </main>
