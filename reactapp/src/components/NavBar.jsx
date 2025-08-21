@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header>
       <nav className="navbar">
-        <div className="navbar-title">Neo Cricket Tournament</div>
+        <div className="navbar-title">Neo Cricket Tournament Registration</div>
         <ul className="navbar-links">
           <li>
             <NavLink
