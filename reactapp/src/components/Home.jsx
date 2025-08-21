@@ -3,16 +3,25 @@ import cricketImg from "../assets/background.jpg";
 
 function Home() {
   const navigate = useNavigate();
+
   return (
-    <div className="home-content">
+    <main className="home-content">
       <h2 className="home-welcome">
         Welcome to Cricket Tournament Registration
       </h2>
-      <img src={cricketImg} alt="Cricket Tournament" />
-      <button className="register-btn" onClick={() => navigate("/add")}>
+      <img
+        src={cricketImg}
+        alt="Players in a Cricket Tournament"
+        className="home-image"
+      />
+      <button
+        data-testid="register-btn"
+        className="register-btn"
+        onClick={() => navigate("/add")}
+      >
         Register Player
       </button>
-    </div>
+    </main>
   );
 }
 

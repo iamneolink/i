@@ -87,6 +87,7 @@ function AddPlayer() {
         <input
           id="phone"
           name="phone"
+          type="text"
           value={form.phone}
           onChange={handleChange}
         />
