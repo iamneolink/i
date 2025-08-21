@@ -1,24 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-title">Neo Cricket Tournament</div>
-      <ul className="navbar-links">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/players">Players</Link>
-        </li>
-        <li>
-          <Link to="/add" className="navbar-register">
-            Register Player
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav className="navbar">
+        <div className="navbar-title">Neo Cricket Tournament</div>
+        <ul className="navbar-links">
+          <li>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/players"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Players
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/add"
+              className={({ isActive }) =>
+                "navbar-register " + (isActive ? "active" : "")
+              }
+            >
+              Register Player
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
