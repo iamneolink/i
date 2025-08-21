@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1>Neo Cricket Tournament Registration</h1>
+      <div className="navbar-title">Neo Cricket Tournament</div>
       <ul className="navbar-links">
         <li>
           <Link to="/">Home</Link>
@@ -13,7 +13,9 @@ function Navbar() {
           <Link to="/players">Players</Link>
         </li>
         <li>
-          <Link to="/add">Register Player</Link>
+          <Link to="/add" className="navbar-register">
+            Register Player
+          </Link>
         </li>
       </ul>
     </nav>

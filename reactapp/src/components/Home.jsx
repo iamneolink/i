@@ -1,15 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import cricketImg from "../assets/background.jpg";
 
 function Home() {
+  const navigate = useNavigate();
   return (
-    <div className="home-div">
-      <h2>Welcome to Cricket Tournament Registration</h2>
-      <img
-        src={cricketImg}
-        alt="Cricket"
-        style={{ maxWidth: "100%", marginBottom: "1rem" }}
+    <div className="home-bg-wrapper">
+      <div
+        className="home-bg-blur"
+        style={{ backgroundImage: `url(${cricketImg})` }}
       />
-      lkjfdanfk
+      <div className="home-content">
+        <h2 className="home-welcome">
+          Welcome to Neo Cricket Tournament Registration
+        </h2>
+        <button className="register-btn" onClick={() => navigate("/add")}>
+          Register Player
+        </button>
+      </div>
     </div>
   );
 }
