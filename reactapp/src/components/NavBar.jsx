@@ -27,6 +27,7 @@ function Navbar() {
           <li>
             <NavLink
               to="/add"
+              data-testid="navbar-register-link"
               className={({ isActive }) =>
                 "navbar-register " + (isActive ? "active" : "")
               }
