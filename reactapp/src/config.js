@@ -1,0 +1,1 @@
+export const backend_url = "https://ide-effdaaabdbbdfdccaeedcbfddebbacbbcefccfc.premiumproject.examly.io/proxy/8080"

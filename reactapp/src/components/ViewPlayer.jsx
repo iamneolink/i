@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-
+import { backend_url } from "../config";
 function ViewPlayer() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/getAllPlayer", {
+    fetch(`${backend_url}/getAllPlayer`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -33,7 +33,7 @@ function ViewPlayer() {
   if (error) return <div className="error">{error}</div>;
 
   return (
-    <div>
+    <div className="player-table-container">
       <h2>All Players</h2>
       <table className="player-table">
         <thead>
