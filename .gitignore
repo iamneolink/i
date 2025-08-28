@@ -21,3 +21,6 @@ Thumbs.db
 reacttest.js
 junit.java
 
+/reactapp/src/tests
+/reactapp/package-lock.json
+package.json

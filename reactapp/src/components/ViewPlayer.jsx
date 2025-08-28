@@ -26,48 +26,51 @@ function ViewPlayer() {
 
   if (loading)
     return (
-      <div>
-        <p>All Players</p>Loading players...
+      <div className="player-table-container neo-card neo-loading">
+        <p>All Players</p>
+        <div className="loading">Loading players...</div>
       </div>
     );
-  if (error) return <div className="error">{error}</div>;
+  if (error) return <div className="error neo-card">{error}</div>;
 
   return (
-    <div className="player-table-container">
-      <h2>All Players</h2>
-      <table className="player-table">
-        <thead>
-          <tr>
-            <th>Player Name</th>
-            <th>Player City</th>
-            <th>Phone</th>
-            <th>Played In</th>
-            <th>Player Type</th>
-            <th>Last Played For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {players.length === 0 ? (
+    <section className="player-table-container neo-card">
+      <h2>Players</h2>
+      <div className="neo-table-wrapper">
+        <table className="player-table neo-table">
+          <thead>
             <tr>
-              <td colSpan={6} style={{ textAlign: "center" }}>
-                No players registered yet.
-              </td>
+              <th>Player Name</th>
+              <th>Player City</th>
+              <th>Phone</th>
+              <th>Played In</th>
+              <th>Player Type</th>
+              <th>Last Played For</th>
             </tr>
-          ) : (
-            players.map((p, i) => (
-              <tr key={i}>
-                <td>{p.playerName}</td>
-                <td>{p.playerCity}</td>
-                <td>{p.phone}</td>
-                <td>{p.playedIn}</td>
-                <td>{p.playerType}</td>
-                <td>{p.lastPlayedFor}</td>
+          </thead>
+          <tbody>
+            {players.length === 0 ? (
+              <tr>
+                <td colSpan={6} style={{ textAlign: "center" }}>
+                  No players registered yet.
+                </td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+            ) : (
+              players.map((p, i) => (
+                <tr key={i}>
+                  <td>{p.playerName}</td>
+                  <td>{p.playerCity}</td>
+                  <td>{p.phone}</td>
+                  <td>{p.playedIn}</td>
+                  <td>{p.playerType}</td>
+                  <td>{p.lastPlayedFor}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }
 
